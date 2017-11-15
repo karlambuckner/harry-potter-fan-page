@@ -7,7 +7,7 @@
 <ul>
   <% @work.reviews.each do |review| %>
     <li>
-      <%= link_to review.content, work_reviews_path(review) %>
+      <%= link_to review.content, work_review_path(review) %>
     </li>
  <% end %>
 </ul>

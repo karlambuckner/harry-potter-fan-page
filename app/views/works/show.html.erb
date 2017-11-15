@@ -1,0 +1,13 @@
+<h1><%= @work.name %></h1>
+<ul>
+  <li><%= @work.description %></li>
+  <li><img src='<%= @work.image_url %>'></li>
+</ul>
+
+<ul>
+  <% @work.reviews.each do |review| %>
+    <li>
+      <%= link_to review.content, work_reviews_path(review) %>
+    </li>
+ <% end %>
+</ul>

@@ -25,7 +25,7 @@ end
 
 
 30.times do |index|
-  Work.create!(name: Faker::HarryPotter.book,
+  Work.create!(name: Faker::HarryPotter.location,
   description: Faker::HarryPotter.quote,
   user_id: Faker::Number.between(1, 30),
   category_id: Faker::Number.between(1,8))

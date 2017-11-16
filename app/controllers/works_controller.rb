@@ -24,6 +24,27 @@ class WorksController < ApplicationController
     end
   end
 
+  def edit
+    @work = Work.find(params[:id])
+    @categories = Category.all
+    @users = User.all
+  end
+
+  def update
+    @work= Work.find(params[:id])
+    if @work.update(work_params)
+      redirect_to work_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @work = Work.find(params[:id])
+    @work.destroy
+    redirect_to categories_path
+  end
+
 private
   def work_params
     params.require(:work).permit(:name, :description, :image_url, :category_id, :user_id)

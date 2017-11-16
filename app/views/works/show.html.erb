@@ -11,3 +11,8 @@
     </li>
  <% end %>
 </ul>
+
+<p><%= link_to "Edit", edit_work_path(@work) %></p>
+<p><%= link_to "Delete", work_path(@work),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
